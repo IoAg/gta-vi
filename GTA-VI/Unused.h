@@ -1,0 +1,8 @@
+// Unused.h
+
+#ifndef __UNUSED_H__
+#define __UNUSED_H__
+
+#define UNUSED(x) ((void)(x))
+
+#endif /*__UNUSED_H__*/
