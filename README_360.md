@@ -1,16 +1,16 @@
 
-# Ground Truth Annotation-Visualization Interface for Eye Movements in 360 degree Videos
+# Ground Truth Annotation-Visualization Interface for Eye Movements in 360-degree Videos
 
 **For the documentation of the tool refer to the _Main Page_**
 
 ## 1. Introduction
 
-Here we explain the specifics of the 360 degree extension to the original GTA-VI tool. This
-extension allows the visualization and annotation of data gathered during 360
-degrees experiments. The experiment stimuli used so far is monocular 360 degree
+Here we explain the specifics of the 360-degree extension to the original GTA-VI tool. This
+extension allows the visualization and annotation of data gathered during 360-degree 
+experiments. The experimental stimuli used so far is monocular 360-degree
 equirectangular videos. The eye tracking recordings are stored in the previously
 explained ARFF format but it is extended in order to be able to represent the
-state of the experiment.
+state of the HMD experiment.
 
 ## 2. ARFF files
 
@@ -103,20 +103,20 @@ recorded during dynamic scene viewing, ETVIS 2016
 > pages={65-68}<br/>
 > }
 
-## 5. Citing GTA-VI 360 degrees extension
+## 5. Citing GTA-VI 360-degree extension
 
 We would ask you to cite the following paper if you use GTA-VI tool along with
-its 360 degrees extension
+its 360-degree extension
 
-%TODO add citation of the SWAET/JEMR abstract
+%TODO will be added in the future
 
 ## 6. Use with CUDA
 
-The extension supports CUDA accelerated conversion from equirectangular to field of view
+The extension supports CUDA accelerated conversion from equirectangular to field-of-view
 frames. In order to use this functionality you will have to change the *GTA-VI.pro* file.
 
-First you have to find the compute architecture of you GPU card. The compute architecture
-can be found in <https://developer.nvidia.com/cuda-gpus>. The compute architecture is the
+First you have to find the compute architecture of you GPU card, which is provided
+in <https://developer.nvidia.com/cuda-gpus>. The compute architecture number is 
 derived from the compute capability by removing the dot between the 2 numbers.
 
 Second in the *GTA-VI.pro* file uncomment the *CONFIG += USE_CUDA*, place the number from
@@ -135,14 +135,14 @@ If things do not compile or work as expected you can take a look at *QMAKE_LIBDI
 *INCLUDEPATH* in the *GTA-VI.pro* and fix possible errors.
 
 If you still cannot make it work you can use the CPU implementation, by commenting 
-the "#CONFIG += USE_CUDA" line, which does the same but slower.
+the "#CONFIG += USE_CUDA" line, which provides the same funcitonality but slower.
 
 ## 7. Examples
 
 If you have installed the tool succesfully you can try to run the following
 examples.
 
-The 360 degrees extension of the tool is only available through the command line
+The 360-degree extension of the tool is only available through the command line
 interface.
 
 Move to the GTA-VI directory and run ./GTA-VI -h for help. Some example
@@ -173,7 +173,7 @@ The explanation of the command line a arguments as return from the tool is given
 |\-\-fov| \-\-field-of-view                | Convert Equirectangular video to Field Of View|
 |\-\-head| \-\-head-only-motion            | Display only head motion in the equirectangular video|
 
-## 8. GTA-VI 360 degrees functionality
+## 8. GTA-VI 360-degree functionality
 
 The current extension displays gaze/head coordinates along with their speed.
 Without any argument the head+eye gaze trace is displayed on all 4 panels along
