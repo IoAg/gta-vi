@@ -40,7 +40,7 @@ void Arff::ChangeData(int row, int column, double value)
     m_isChanged = true;
 }
 
-int Arff::WidthPx()
+int Arff::WidthPx() const
 {
     string value;
     if (GetMetadata("width_px", value))
@@ -54,7 +54,7 @@ void Arff::SetWidthPx(int width)
     SetMetadata("width_px", to_string(width));
 }
 
-int Arff::HeightPx()
+int Arff::HeightPx() const
 {
     string value;
     if (GetMetadata("height_px", value))

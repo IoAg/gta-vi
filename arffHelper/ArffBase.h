@@ -39,16 +39,16 @@ public:
 
     void SetRelation(string relation);
 
-    string GetRelation();
+    string GetRelation() const;
 
-    bool GetMetadata(const string& key, string& value);
+    bool GetMetadata(const string& key, string& value) const;
 
     bool SetMetadata(const string &key, const string &value);
     ///< This function returns always true.
 
-    bool GetAttMapping(const int &attIndex, vector<string>& values);
+    bool GetAttMapping(const int &attIndex, vector<string>& values) const;
 
-    bool GetAttMapping(const string &attName, vector<string>& values);
+    bool GetAttMapping(const string &attName, vector<string>& values) const;
     ///< The values are the strings of the mapping to the doubles
     ///< in the data.
 

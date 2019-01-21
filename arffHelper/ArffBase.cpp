@@ -112,14 +112,14 @@ void ArffBase::SetRelation(string relation)
     m_relation = relation;
 }
 
-string ArffBase::GetRelation()
+string ArffBase::GetRelation() const
 {
     return m_relation;
 }
 
-bool ArffBase::GetMetadata(const string& key, string& value)
+bool ArffBase::GetMetadata(const string& key, string& value) const
 {
-    map<string,string>::iterator it = m_mMetadata.find(key);
+    map<string,string>::const_iterator it = m_mMetadata.find(key);
     if (it != m_mMetadata.end())
     {
         value = it->second;
@@ -137,7 +137,7 @@ bool ArffBase::SetMetadata(const string &key, const string &value)
     return true;
 }
 
-bool ArffBase::GetAttMapping(const int &attIndex, vector<string>& values)
+bool ArffBase::GetAttMapping(const int &attIndex, vector<string>& values) const
 {
     values = m_vpAttributes.at(attIndex)->GetMapping();
     if (values.size() == 0)
@@ -146,7 +146,7 @@ bool ArffBase::GetAttMapping(const int &attIndex, vector<string>& values)
     return true;
 }
 
-bool ArffBase::GetAttMapping(const string &attName, vector<string>& values)
+bool ArffBase::GetAttMapping(const string &attName, vector<string>& values) const
 {
     int index = 0;
 
