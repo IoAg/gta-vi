@@ -5,7 +5,7 @@ CONFIG += debug
 #CONFIG += release
 
 ## Uncomment line below to use CUDA
-CONFIG += USE_CUDA
+#CONFIG += USE_CUDA
 
 ## If you use CUDA you should find the compute capability of your GPU from the
 ## following list:
