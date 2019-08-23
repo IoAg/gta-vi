@@ -69,7 +69,7 @@ bool MediaPlayer::setMedia(QUrl videoFile)
     {
         if (!VideoExtractor::ExtractFrames(sVideoFile))
         {
-            cerr << "Could not open file: " << sVideoFile << endl;
+            cerr << "Could not open video file: " << sVideoFile << endl;
             return false;
         }
     }

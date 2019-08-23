@@ -32,7 +32,7 @@ bool ArffBase::Load(const char* filename)
 
     if (ifs.fail())
     {
-        cerr << "Could not open file: " << filename << endl;
+        cerr << "Could not open provided ARFF file: " << filename << endl;
         return false;
     }
 

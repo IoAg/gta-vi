@@ -27,12 +27,20 @@ MainWindow::MainWindow(SetupValues setup) : m_setup(setup), m_pMainWidget(0), m_
     InitializeMenu();
 
     // assign values
-    m_setup.arffFile = QFileInfo(m_setup.arffFile).absoluteFilePath();
-    m_setup.saveFile = QFileInfo(m_setup.saveFile).absoluteFilePath();
-    m_setup.videoFile = QFileInfo(m_setup.videoFile).absoluteFilePath();
+    if (!m_setup.arffFile.isEmpty())
+        m_setup.arffFile = QFileInfo(m_setup.arffFile).absoluteFilePath();
+    else
+    {
+       cerr << "ERROR: your should provide an ARFF file with the --af option" << endl;
+       exit(-1);
+    }
+    if (!m_setup.saveFile.isEmpty())
+        m_setup.saveFile = QFileInfo(m_setup.saveFile).absoluteFilePath();
+    if (!m_setup.videoFile.isEmpty())
+        m_setup.videoFile = QFileInfo(m_setup.videoFile).absoluteFilePath();
 
     // Load Files
-    if (!m_pVideoWidget->SetMedia(m_setup.videoFile))
+    if (!m_setup.videoFile.isEmpty() &&!m_pVideoWidget->SetMedia(m_setup.videoFile))
         exit(-1);
 
     if (!m_pArff->Load(m_setup.arffFile.toStdString().c_str()))

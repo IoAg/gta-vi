@@ -81,20 +81,15 @@ int main(int argc, char *argv[])
     if (parser.isSet("head-only-motion"))
         setup.gazeType = GazeType::HEAD;
 
-    if (parser.isSet("video-file") && parser.isSet("arff-file") && parser.isSet("save-file") && parser.isSet("primary-label"))
-    {
-        setup.arffFile = parser.value(arffFileOption);
-        setup.saveFile = parser.value(saveFileOption);
-        setup.videoFile = parser.value(videoFileOption);
-        setup.primaryLabel = parser.value(primaryLabelOption);
-        setup.primaryLabelValues = parser.value(primaryLabelValueOption);
-        setup.secondaryLabel = parser.value(secondaryLabelOption);
-        setup.secondaryLabelValues = parser.value(secondaryLabelValueOption);
+    setup.arffFile = parser.value(arffFileOption);
+    setup.saveFile = parser.value(saveFileOption);
+    setup.videoFile = parser.value(videoFileOption);
+    setup.primaryLabel = parser.value(primaryLabelOption);
+    setup.primaryLabelValues = parser.value(primaryLabelValueOption);
+    setup.secondaryLabel = parser.value(secondaryLabelOption);
+    setup.secondaryLabelValues = parser.value(secondaryLabelValueOption);
 
-        pMainWindow = new MainWindow(setup);
-    }
-    else
-        pMainWindow = new MainWindow;
+    pMainWindow = new MainWindow(setup);
 
     if (parser.isSet(fullScreenOption))
         pMainWindow->showFullScreen();
