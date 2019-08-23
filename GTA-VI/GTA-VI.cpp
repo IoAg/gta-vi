@@ -56,6 +56,12 @@ int main(int argc, char *argv[])
             "");
     parser.addOption(secondaryLabelValueOption);
 
+    QCommandLineOption speedFilterOption(QStringList() << "sw" << "speed-window",
+            QCoreApplication::translate("main", "The duration of the window over which we filter the speed signal. The default value is 100000 us."),
+            QCoreApplication::translate("main", "double value"),
+            "100000");
+    parser.addOption(speedFilterOption);
+
     QCommandLineOption fullScreenOption(QStringList() << "f" << "full-screen",
             QCoreApplication::translate("main", "Start window in full screen mode."));
     parser.addOption(fullScreenOption);
@@ -88,6 +94,7 @@ int main(int argc, char *argv[])
     setup.primaryLabelValues = parser.value(primaryLabelValueOption);
     setup.secondaryLabel = parser.value(secondaryLabelOption);
     setup.secondaryLabelValues = parser.value(secondaryLabelValueOption);
+    setup.windowDur = parser.value(speedFilterOption).toDouble();
 
     pMainWindow = new MainWindow(setup);
 

@@ -12,7 +12,7 @@
 class GazeSpeed
 {
 public:
-    GazeSpeed(Arff *pArff, int step=1);
+    GazeSpeed(Arff *pArff, double integrationPeriod=1);
 
     vector<double> GetSpeed();
 

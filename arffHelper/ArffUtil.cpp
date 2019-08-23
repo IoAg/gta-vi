@@ -30,3 +30,17 @@
 
     return res;
 }
+
+/*static*/ double ArffUtil::GetSamplingPeriod(const Arff *pArff)
+{
+    int timeInd;
+    pArff->GetAttIndex("time", timeInd);
+    int rows, columns;
+    pArff->Size(rows, columns);
+
+    double startTime = pArff->cbegin()[0][timeInd];
+    double endTime = pArff->cend()[-1][timeInd];
+    double dur = endTime - startTime;
+
+    return dur / rows;
+}

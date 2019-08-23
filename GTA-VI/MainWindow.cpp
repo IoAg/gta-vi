@@ -138,7 +138,7 @@ void MainWindow::InitializeMainWidget()
     m_pVideoWidget = new VideoWidget;
     m_pArffWidgetCoordX = new ArffWidgetCoordX;
     m_pArffWidgetCoordY = new ArffWidgetCoordY;
-    m_pArffWidgetSpeed = new ArffWidgetSpeed;
+    m_pArffWidgetSpeed = new ArffWidgetSpeed(m_setup.windowDur);
 
     m_pPaintGaze = new PaintGaze;
 

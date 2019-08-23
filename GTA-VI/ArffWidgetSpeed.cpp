@@ -9,7 +9,6 @@
 
 #define RELATION360 "GAZE_360"
 #define MAX_SPEED 200.0
-#define STEP 5
 
 using namespace std;
 
@@ -31,8 +30,9 @@ void ArffWidgetSpeed::HandleToggleView()
 }
 
 // PUBLIC:
-ArffWidgetSpeed::ArffWidgetSpeed(QWidget *parent) : ArffWidgetBase(parent), m_pSpeed(&m_vSpeed), m_FovDisplayed(false)
+ArffWidgetSpeed::ArffWidgetSpeed(double filterWindow) : ArffWidgetBase(), m_pSpeed(&m_vSpeed), m_FovDisplayed(false)
 {
+    m_speedWindow = filterWindow;
 }
 
 // PROTECTED:
@@ -42,7 +42,7 @@ void ArffWidgetSpeed::SetData(Arff &arff, int attToPaint, double maxValue)
 
     if (IsArff360())
     {
-        EquirectangularToFovSpeed eqToSpeed(m_pArff, STEP);
+        EquirectangularToFovSpeed eqToSpeed(m_pArff, m_speedWindow);
         // Always get head+eye speed because the provided ARFF is converted to 
         // hold the data to display in x,y
         m_vSpeed = eqToSpeed.GetHeadPlusEyeSpeed(); 
@@ -54,7 +54,7 @@ void ArffWidgetSpeed::SetData(Arff &arff, int attToPaint, double maxValue)
     }
     else
     {
-        GazeSpeed gazeSpeed(m_pArff, STEP);
+        GazeSpeed gazeSpeed(m_pArff, m_speedWindow);
         m_vSpeed = gazeSpeed.GetSpeed();
         NormalizeSpeed(m_vSpeed);
     }
@@ -73,7 +73,7 @@ void ArffWidgetSpeed::DisplayFov()
 
 void ArffWidgetSpeed::DisplayHead()
 {
-    EquirectangularToFovSpeed eqToSpeed(m_pArff, STEP);
+    EquirectangularToFovSpeed eqToSpeed(m_pArff, m_speedWindow);
     m_vSpeed = eqToSpeed.GetHeadSpeed();
     NormalizeSpeed(m_vSpeed);
     m_vHeadSpeed.clear();

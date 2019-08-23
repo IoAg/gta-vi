@@ -29,6 +29,7 @@ struct SetupValues
     QString secondaryLabel;
     QString secondaryLabelValues;
     GazeType gazeType;
+    double windowDur;
 };
 
 class MainWindow : public QMainWindow

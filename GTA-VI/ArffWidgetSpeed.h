@@ -8,7 +8,7 @@ public slots:
     void HandleToggleView();
 
 public:
-    ArffWidgetSpeed(QWidget *parent=0);
+    ArffWidgetSpeed(double filterWindow);
 
     virtual void SetData(Arff &arff, int attToPaint, double maxValue=-1.0);
 
@@ -27,6 +27,7 @@ private:
     vector<double> m_vHeadSpeed;
     vector<double> *m_pSpeed; 
     bool           m_FovDisplayed;
+    double         m_speedWindow; // window duration from which we compute the step for speed calculation
 
     void PaintSpeed(const vector<double>& vSpeed, QPainter *painter);
     // Paints speed from the provided vector to the painter.

@@ -13,8 +13,9 @@ using namespace std;
 class EquirectangularToFovSpeed : public EquirectangularToFovBase
 {
 public:
-    EquirectangularToFovSpeed(Arff *pArff, int step=1);
-    ///< \p step is the interval to use between samples for speed calculation. It acts
+    EquirectangularToFovSpeed(Arff *pArff, double integrationPeriod=1);
+    ///< \p integrationPeriod is the duration that is used for the calculation of the 
+    ///< step that is used between samples for speed calculation. It acts
     ///< as simple filtering.
 
     virtual ~EquirectangularToFovSpeed();

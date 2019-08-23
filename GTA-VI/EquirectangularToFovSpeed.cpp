@@ -2,6 +2,7 @@
 
 #include "EquirectangularToFovSpeed.h"
 #include "Util.h"
+#include "../arffHelper/ArffUtil.h"
 
 #include <cassert>
 #include <cmath>
@@ -12,10 +13,12 @@
 
 using namespace std;
 
-EquirectangularToFovSpeed::EquirectangularToFovSpeed(Arff *pArff, int step) :
+EquirectangularToFovSpeed::EquirectangularToFovSpeed(Arff *pArff, double integrationPeriod) :
     EquirectangularToFovBase(pArff)
 {
-    m_step = step;
+    double samplingPeriod = ArffUtil::GetSamplingPeriod(m_pArff);
+    m_step = ceil(integrationPeriod / samplingPeriod);
+    m_step = m_step<1 ? 1 : m_step;
     
     FillVectors();
 }
