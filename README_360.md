@@ -169,6 +169,7 @@ The explanation of the command line a arguments as return from the tool is given
 |\-\-plv| \-\-primary-label-value <name>   | (Optional) Create a nominal primary labelling attribute. Ex. "{fix,sacc,sp}".|
 |\-\-sl| \-\-secondary-label <name>        | (Optional) Secondary hand labelling attribute name.|
 |\-\-slv| \-\-secondary-label-value <name> | (Optional) Create a nominal secondary labelling attribute. Ex. "{fix,sacc,sp}".|
+|\-\-sw| \-\-speed-window \<double\> | The duration of the window over which we filter the speed signal. The default value is 100000 us.|                     
 |-f| \-\-full-screen                     | Start window in full screen mode.|
 |\-\-fov| \-\-field-of-view                | Convert Equirectangular video to Field Of View|
 |\-\-head| \-\-head-only-motion            | Display only head motion in the equirectangular video|
