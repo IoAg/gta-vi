@@ -228,7 +228,13 @@ void ArffBase::ProcessArffLine(string& line)
 
 void ArffBase::ProcessMetadata(vector<string>& metaLine)
 {
-    m_mMetadata[metaLine[1]] = metaLine[2];
+    // Metadata with fewer than 3 string parts is not possible
+    if (metaLine.size() < 2)
+        return;
+    else if (metaLine.size() < 3)
+        m_mMetadata[metaLine[1]] = "";
+    else
+        m_mMetadata[metaLine[1]] = metaLine[2];
 }
 
 void ArffBase::ProcessAttribute(vector<string>& attLine)

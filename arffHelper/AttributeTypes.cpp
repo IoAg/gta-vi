@@ -127,7 +127,6 @@ void AttributeTypeNom::PrintDescription(ofstream& ofs)
 {
     AttributeType::PrintDescription(ofs);
     ofs << "{";
-    std::map<string,double>::iterator it;
     unsigned int i;
     for (i=0; i<m_inversedMap.size()-1; i++)
         ofs << m_inversedMap[i] << ',';
