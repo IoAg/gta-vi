@@ -108,7 +108,14 @@ recorded during dynamic scene viewing, ETVIS 2016
 We would ask you to cite the following paper if you use GTA-VI tool along with
 its 360-degree extension
 
-%TODO will be added in the future
+> @inproceedings{agtzidis2019dataset, <br/>
+>   title={360-degree Video Gaze Behaviour: A Ground-Truth Data Set and a Classification Algorithm for Eye Movements}, <br/>
+>   author={Agtzidis, Ioannis and Startsev, Mikhail and Dorr, Michael}, <br/>
+>   booktitle={Proceedings of the 27th ACM International Conference on Multimedia (MM ’19)}, <br/>
+>   year={2019}, <br/>
+>   organization={ACM}, <br/>
+>   doi={10.1145/3343031.3350947} <br/>
+> }
 
 ## 6. Use with CUDA
 
@@ -149,11 +156,11 @@ Move to the GTA-VI directory and run ./GTA-VI -h for help. Some example
 commands are given below:
 
 ```
-./GTA-VI --vf 360_video.mp4 --af recoding1.arff --pl ioannis_pl --plv "{unassigned, fix, sacc, sp, noise}" --sl ioannis_sl --slv "{unassigned, okn, vor, noise}" --sf test1.arff --fov -f
+./GTA-VI --vf 360_video.mp4 --af recording1.arff --pl ioannis_pl --plv "{unassigned, fix, sacc, sp, noise}" --sl ioannis_sl --slv "{unassigned, okn, vor, noise}" --sf test1.arff --fov -f
 ```
 
 ```
-./GTA-VI --vf 360_video.mp4 --af recoding1.arff --pl ioannis_pl --plv "{unassigned, fix, sacc, sp, noise}" --sf test1.arff -f
+./GTA-VI --vf 360_video.mp4 --af recording1.arff --pl ioannis_pl --plv "{unassigned, fix, sacc, sp, noise}" --sf test1.arff -f
 ```
 
 The explanation of the command line a arguments as return from the tool is given below:
@@ -180,7 +187,7 @@ The current extension displays gaze/head coordinates along with their speed.
 Without any argument the head+eye gaze trace is displayed on all 4 panels along
 with its overlay on the equirectangular. 
 
-By passing the \-\-fov argument the gaze within head (FOV) is diplayed, which
+By passing the \-\-fov argument the gaze within head (FOV) is displayed, which
 is equivalent to the movement of the eye within the eye socket. Also with the
 \-\-fov option the video panel displays only the part of the video that was
 displayed during the experiment in the head mounted display. With this option 

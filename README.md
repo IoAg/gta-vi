@@ -6,7 +6,7 @@
 ## 1. Introduction
 
 In eye movement research with dynamic natural scenes there is a great need for
-ground thruth since the stimuli are not artificially created and their
+ground truth since the stimuli are not artificially created and their
 properties are not known. Even though many automatic algorithms exist for
 annotating samples from streams to fixation, saccades, smooth pursuit etc., hand
 labelling is still considered the best for those tasks especially when we are
@@ -33,9 +33,9 @@ height_mm*.
 - Lines starting with "@" followed by a word, without space, are considered
 keywords. The available keywords are the following: 
     - "@ATTRIBUTE" followed by the attribute name followed by the type of data.
-    The tool curently support *INTEGER*, *NUMERIC* and *NOMINAL* attributes. The
+    The tool currently support *INTEGER*, *NUMERIC* and *NOMINAL* attributes. The
     nominal attributes are handled internally as enumerations. Thus when you
-    acces the loaded you will see integer values in their place. 
+    access the loaded data you will see integer values in their place. 
     - "@DATA" denotes that all the lines from next line onwards are data. The 
     data should follow the order that the attributes were presented.
 
@@ -46,7 +46,7 @@ keywords. The available keywords are the following:
 Part of example ARFF file with added explanation.
 
 ```
-@RELATION gaze_labels <-data included in arff
+@RELATION gaze_labels <-description of data included in the ARFF file
 
 %@METADATA width_px 1280 <-recording metadata
 %@METADATA height_px 720
